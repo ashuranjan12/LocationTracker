@@ -1,16 +1,51 @@
-# React + Vite
+# Location Tracker Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple React web app that uses the browser's geolocation API to track the user's current location in real time.
 
-Currently, two official plugins are available:
+## What this app does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Starts live location tracking when the page loads
+- Displays latitude, longitude, accuracy, and the last update time
+- Keeps a short history of recent location points
+- Estimates the distance traveled between the first and latest samples
+- Lets users stop, clear, or restart tracking at any time
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Real-time geolocation updates
+- Clean, responsive dashboard
+- Easy-to-use buttons for start, stop, and clear
+- Works in modern browsers that support geolocation
 
-## Expanding the Oxlint configuration
+## How it works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The app requests location permission from the browser and uses the browser's built-in geolocation services to update the current position. It stores a rolling list of recent points and displays useful location details.
+
+## Run locally
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open the local URL shown in the terminal, usually:
+   ```text
+   http://localhost:5173/
+   ```
+
+## Build for production
+
+```bash
+npm run build
+```
+
+## Notes
+
+- Location tracking only works if the browser has permission to access the device location.
+- Accuracy may vary depending on the device, browser, and network connection.
+- Some browsers may require HTTPS for full geolocation support in certain contexts.
